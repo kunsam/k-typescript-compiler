@@ -4,7 +4,6 @@ import * as ts from "typescript";
 import { KTsCompiler } from "./typings";
 import TsSyntaxResolveUtil from "./syntax_util";
 
-
 export default class SourceFileUtil {
   public static getSyntaxKindByString(name: string): ts.SyntaxKind {
     switch (name) {
@@ -12,7 +11,7 @@ export default class SourceFileUtil {
         return ts.SyntaxKind.ExportAssignment;
       }
       case "LastLiteralToken": {
-        return ts.SyntaxKind.LastLiteralToken
+        return ts.SyntaxKind.LastLiteralToken;
       }
       case "PropertyDeclaration": {
         return ts.SyntaxKind.PropertyDeclaration;
@@ -61,7 +60,7 @@ export default class SourceFileUtil {
           }
         }
         if (currentResult) {
-          if (!result) result = {}
+          if (!result) result = {};
           result = { ...result, ...currentResult };
         }
       });

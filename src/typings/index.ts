@@ -1,10 +1,6 @@
-
 import * as ts from "typescript";
 
-
-
 export namespace KTsCompiler {
-
   export type ImportFilesData = {
     path: string;
     names: string[];
@@ -45,5 +41,5 @@ export namespace KTsCompiler {
     };
     name: string;
     propertys: ClassProperty[];
-  };
-} 
+  }
+}

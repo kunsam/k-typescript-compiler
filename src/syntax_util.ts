@@ -1,8 +1,6 @@
 import * as ts from "typescript";
 import { KTsCompiler } from "./typings";
 
-
-
 export default class TsSyntaxResolveUtil {
   public static getNodeValue(node: ts.Node, sourceFile?: ts.SourceFile) {
     if (node.kind === ts.SyntaxKind.NumericLiteral) {
