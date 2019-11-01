@@ -5,7 +5,7 @@
   "main": "out/index.js",
   "scripts": {
     "build": "tsc -p .",
-    "pub": "npm run build && npm version patch && npm publish"
+    "pub": "rm -rf ./out && npm run build && npm version patch && npm publish"
   },
   "author": "kunsam",
   "license": "ISC",

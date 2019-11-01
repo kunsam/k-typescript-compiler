@@ -8,5 +8,8 @@ class Program {
     get program() {
         return this._program;
     }
+    init() {
+        // 可以计算sourceFile当中的数据 做缓存
+    }
 }
 exports.default = Program;
