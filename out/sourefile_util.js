@@ -98,4 +98,3 @@ class SourceFileUtil {
     }
 }
 exports.default = SourceFileUtil;
-//# sourceMappingURL=sourefile_util.js.map

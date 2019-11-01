@@ -273,4 +273,3 @@ class TsSyntaxResolveUtil {
     }
 }
 exports.default = TsSyntaxResolveUtil;
-//# sourceMappingURL=syntax_util.js.map

@@ -4,4 +4,3 @@ var KTsCompiler;
 (function (KTsCompiler) {
     ;
 })(KTsCompiler = exports.KTsCompiler || (exports.KTsCompiler = {}));
-//# sourceMappingURL=index.js.map

@@ -10,4 +10,3 @@ class Program {
     }
 }
 exports.default = Program;
-//# sourceMappingURL=program.js.map
