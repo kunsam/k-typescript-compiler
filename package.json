@@ -2,7 +2,7 @@
   "name": "k-typescript-compiler-tool",
   "version": "1.0.0",
   "description": "tool of compile /.tsx?/ file",
-  "main": "index.js",
+  "main": "out/index.js",
   "scripts": {
     "build": "tsc -p .",
     "pub": "npm run build && npm version patch && npm publish"

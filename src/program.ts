@@ -10,4 +10,8 @@ export default class Program {
     return this._program
   }
 
+  public init() {
+    // 可以计算sourceFile当中的数据 做缓存
+  }
+
 }
