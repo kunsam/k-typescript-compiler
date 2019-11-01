@@ -1,0 +1,20 @@
+{
+  "name": "k-typescript-compiler-tool",
+  "version": "1.0.0",
+  "description": "tool of compile /.tsx?/ file",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "pub": "npm run compile && npm version patch && npm publish"
+  },
+  "author": "kunsam",
+  "license": "ISC",
+  "dependencies": {
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1",
+    "typescript": "3.6.4"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.3"
+  }
+}
