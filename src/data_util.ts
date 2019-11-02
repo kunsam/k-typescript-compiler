@@ -1,10 +1,43 @@
 import { isObject, isArray } from "lodash";
-
+import gql from "graphql-tag";
 export default class DataTransfromUtil {
-  public static tranformObjectOrArrayToFields(
-    result: any,
-    parentKey?: string
-  ) {
+  public static recursiveGetSelectionResult(selections: any[] = []) {
+    if (!selections.length) return;
+    let result: any;
+    selections.forEach(selection => {
+      let currentResult: any;
+      const isDeepest = !(
+        selection.selectionSet && selection.selectionSet.selections
+      );
+      if (isDeepest) {
+        currentResult = { [selection.name.value]: true };
+      } else {
+        const childSelectionResult = this.recursiveGetSelectionResult(
+          selection.selectionSet && selection.selectionSet.selections
+        );
+        if (childSelectionResult) {
+          currentResult = { [selection.name.value]: childSelectionResult };
+        }
+      }
+      if (currentResult) {
+        if (!result) result = {};
+        result = { ...result, ...currentResult };
+      }
+    });
+    return result;
+  }
+
+  public static transformGraphStringToFeilds(qlString: string) {
+    try {
+      const object = gql(qlString);
+      if (object && object.definitions.length) {
+        const selections = object.definitions[0].selectionSet.selections;
+        return this.recursiveGetSelectionResult(selections);
+      }
+    } catch {}
+  }
+
+  public static tranformObjectOrArrayToFields(result: any, parentKey?: string) {
     function recursiveGetKey(
       object: any,
       result: string[],
