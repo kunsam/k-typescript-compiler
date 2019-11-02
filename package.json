@@ -1,6 +1,6 @@
 {
   "name": "k-typescript-compiler-tool",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "tool of compile /.tsx?/ file",
   "main": "out/index.js",
   "scripts": {
