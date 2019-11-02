@@ -32,7 +32,8 @@ export default class DataTransfromUtil {
       const object = gql(qlString);
       if (object && object.definitions.length) {
         const selections = object.definitions[0].selectionSet.selections;
-        return this.recursiveGetSelectionResult(selections);
+        const dataobject = this.recursiveGetSelectionResult(selections);
+        return this.tranformObjectOrArrayToFields(dataobject);
       }
     } catch {}
   }
