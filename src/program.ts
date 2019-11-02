@@ -1,10 +1,13 @@
 import * as ts from "typescript";
 import SourceFileUtil from "./sourefile_util";
+import { existsSync } from "fs";
 
 export default class Program {
   private _program: ts.Program;
+  private _fileNames: string[];
   constructor(fileNames: string[], options: ts.CompilerOptions) {
-    this._program = ts.createProgram(fileNames, options);
+    this._fileNames = fileNames.filter(f => existsSync(f));
+    this._program = ts.createProgram(this._fileNames, options);
   }
   public get program() {
     return this._program;
@@ -12,6 +15,10 @@ export default class Program {
 
   public init() {
     // 可以计算sourceFile当中的数据 做缓存
+  }
+
+  public get fileNames() {
+    return this._fileNames;
   }
 
   public static getSourceFileByImportName(
