@@ -37,6 +37,23 @@ export default class DataTransfromUtil {
       }
     } catch {}
   }
+  /**
+   * graphql string to object
+   *
+   * @static
+   * @param {string} qlString
+   * @returns
+   * @memberof DataTransfromUtil
+   */
+  public static transformGraphStringToObject(qlString: string) {
+    try {
+      const object = gql(qlString);
+      if (object && object.definitions.length) {
+        const selections = object.definitions[0].selectionSet.selections;
+        return this.recursiveGetSelectionResult(selections);
+      }
+    } catch {}
+  }
 
   public static tranformObjectOrArrayToFields(result: any, parentKey?: string) {
     function recursiveGetKey(
