@@ -9,6 +9,9 @@
   },
   "author": "kunsam",
   "license": "ISC",
+  "peerDependencies": {
+    "typescript": "^3.7.2"
+  },
   "dependencies": {
     "graphql": "^14.5.8",
     "graphql-tag": "^2.10.1",
