@@ -25,6 +25,7 @@ export default class TsSyntaxResolveUtil {
         sourceFile
       );
     }
+    return node.getText(sourceFile);
   }
 
   public static getNodeLocation(
